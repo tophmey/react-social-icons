@@ -11,13 +11,13 @@ function getNetworkKey(props) {
 }
 
 function SocialIcon(props) {
-  const { url, network, color, className, label, ...rest } = props;
+  const { target, url, network, color, className, label, ...rest } = props;
   const networkKey = getNetworkKey({ url, network });
 
   return (
     <a {...rest}
        href={url}
-       target="_blank"
+       target={target}
        rel="noopener"
        className={cx('social-icon', className)}
        style={{ ...socialIcon, ...props.style }}
@@ -39,6 +39,11 @@ SocialIcon.propTypes = {
   label: PropTypes.string,
   network: PropTypes.string,
   url: PropTypes.string,
+  target: PropTypes.string
+};
+
+SocialIcon.defaultProps = {
+  target: "_blank"
 };
 
 export default SocialIcon;
