@@ -8,6 +8,7 @@
     "test": "karma start",
     "test-dev": "karma start --auto-watch --no-single-run",
     "prepublish": "NODE_ENV=production babel -d ./lib ./src",
+    "prepare": "NODE_ENV=production babel -d ./lib ./src",
     "publish": "./scripts/release.sh"
   },
   "author": "jaketrent",
